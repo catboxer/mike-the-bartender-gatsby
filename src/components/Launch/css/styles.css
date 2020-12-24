@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #303841;
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  max-height: 100vh;
+}
+/* =================
+   Typography 
+   ================= */
+
+h1 {
+  position: relative;
+  font-size: 2.25rem;
+  color: #1badb4;
+  font-family: "Merienda One", cursive;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+h2 {
+  position: relative;
+  font-size: 1.3125rem;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.45);
+  background-color: #1badb4;
+}
+
+/* =================
+   Intro section 
+   ================= */
+.intro {
+  background-image: url("../images/dirty-dancing-kiss.jpg");
+  background-position: center;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-color: #303841;
+  position: relative;
+  padding: 0 0.5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*--darken image
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.45);
+}--*/
+.intro > * {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-text {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #fd9d30;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  order: -1;
+  border: 5px solid #fd5830;
+  border-image: linear-gradient(to left, #fd5830, #fd9d30) 1;
+  width: fit-content;
+  margin: 0 auto !important;
+}
+.fine-print {
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+}
+/* =================
+   Main Content section 
+   ================= */
+
+.main-content {
+  padding: 0 1em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  margin: 0 auto 1em;
+  max-width: 400px;
+}
+
+/* =================
+   form
+   ================= */
+#email-collector {
+  border: 0;
+  width: 50%;
+  max-width: 300px;
+}
+input,
+.btn {
+  width: 100%;
+  font-family: inherit;
+  text-align: inherit;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+.btn-main {
+  display: inline-block;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: whitesmoke;
+  padding: 1em 1.5em;
+  border: 0;
+  background-image: linear-gradient(270deg, #fd5830, #fd9d30);
+  transition: color 500ms, transform 250ms;
+  transform: scale(1);
+}
+.btn:hover,
+.btn:focus {
+  background-image: linear-gradient(90deg, #fd5830, #fd9d30);
+  cursor: pointer;
+  color: black;
+  transform: scale(1.05);
+}
+input {
+  background-color: rgba(0, 0, 0, 0.45);
+  margin-bottom: 0.75em;
+  border: black solid 1px;
+}
+/* =================
+   media queries
+   ================= */
+@media (min-width: 575px) {
+  main {
+    display: flex;
+    font-size: 1.125rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .intro,
+  .main-content {
+    width: 50%;
+  }
+}

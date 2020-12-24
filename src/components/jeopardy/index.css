@@ -1,0 +1,39 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.board {
+  display: grid;
+  grid-template: repeat(5, 20%) / repeat(9, 10%);
+  height: 100vh;
+  background-color: black;
+  justify-content: center;
+}
+.board * {
+  display: flex;
+  border: white 2px solid;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.my-category-title {
+  background-color: turquoise;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.heading {
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+.my-category-clue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
