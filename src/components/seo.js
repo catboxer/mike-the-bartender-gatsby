@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const { site, favicon } = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,7 +21,16 @@ function SEO({ description, lang, meta, title }) {
             author
           }
         }
+      favicon:allWordpressWpFavicon {
+        edges {
+          node {
+            url {
+              source_url
+            }
+          }
+        }
       }
+    }
     `
   )
 
@@ -68,9 +77,15 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+       <link
+        rel="icon"
+        href={favicon.edges[0].node.url.source_url}
+        />
+  </Helmet>
   )
 }
+
 
 SEO.defaultProps = {
   lang: `en`,

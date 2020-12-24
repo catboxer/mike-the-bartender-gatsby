@@ -5,8 +5,6 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 import React from "react"
-import { Helmet } from 'react-helmet'
-import {graphql, StaticQuery} from 'gatsby'
 import styled from 'styled-components'
 import SideMenu from "./SideMenu"
 import Globals from "./GlobalStyles"
@@ -32,23 +30,10 @@ const Main = styled.div`
   margin: 0;
   grid-area: main;
 `
-const Layout = ({ children }) => (
-  <>
-  <StaticQuery query={graphql`
-          {
-            allWordpressWpFavicon{
-              edges{
-                node{
-                  url{
-                    source_url
-                  }
-                }
-              }
-            }
-          }
-        `} render={props => <Helmet><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url} /></Helmet>} />
 
 
+const Layout = ({ children }) => {
+  return <>
       <Globals/>
         <LayoutWrapper> 
           <Logo/>
@@ -60,6 +45,6 @@ const Layout = ({ children }) => (
         </LayoutWrapper>
             <SideMenu/>
     </>
-)
+}
 
 export default Layout
